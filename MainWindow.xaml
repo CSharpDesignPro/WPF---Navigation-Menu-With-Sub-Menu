@@ -1,0 +1,426 @@
+﻿<!--/// <Summary>
+    /// Author : R. Arun Mutharasu
+    /// Created :17-03-2022
+    /// YouTube Channel : C# Design Pro 
+    /// </Summary>-->    
+    
+    <Window x:Class="Navigation_Menu_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Navigation_Menu_App"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="700"
+        Width="900"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <!--// Background Grid //-->
+
+    <Grid Background="#23262B">
+
+        <TextBlock Text="D E S I G N   T H E   I N T E R F A C E"
+                   Foreground="#525965"
+                   FontFamily="Fonts/#Orbitron Medium"
+                   FontSize="10"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right"
+                   Margin="0,0,15,10" />
+
+        <Border Background="#D61734"
+                Height="15"
+                CornerRadius="3,0,0,3"
+                Width="5"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,0,0,8" />
+
+        <!--// Menu Panel //-->
+
+        <StackPanel Background="#2E333A"
+                    Width="230"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left">
+
+            <!--// Channel Name //-->
+
+            <Grid Height="50"
+                  VerticalAlignment="Top"
+                  Margin="0,30,0,0">
+
+                <Border Background="#D61734"
+                        Height="25"
+                        CornerRadius="3,0,0,3"
+                        Width="6"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right" />
+
+                <TextBlock Text="C #   D E S I G N   P R O"
+                           Foreground="#FFFFFF"
+                           FontFamily="Fonts/#Orbitron Medium"
+                           FontSize="15"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center" />
+
+            </Grid>
+
+            <!--// Main Menu //-->
+
+            <Menu Height="450"
+                  Background="Transparent"
+                  Margin="0,40,0,0">
+
+                <Menu.ItemsPanel>
+
+                    <ItemsPanelTemplate>
+
+                        <VirtualizingStackPanel Orientation="Vertical" />
+
+                    </ItemsPanelTemplate>
+
+                </Menu.ItemsPanel>
+
+                <!--// Main Menu - Home //-->
+
+                <MenuItem Header="Home"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_home.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--// Main Menu - Music //-->
+
+                <MenuItem Header="Music"
+                          Template="{StaticResource Menu_SubMenu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_music.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                    <!--// Music Submenu - All Songs //-->
+
+                    <MenuItem Header="All Songs"
+                              Template="{StaticResource Item_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_songs.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+                    <!--// Music Submenu - Albums //-->
+
+                    <MenuItem Header="Albums"
+                              Template="{StaticResource Item_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_album.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+                    <!--// Music Submenu - Genres //-->
+
+                    <MenuItem Header="Genres"
+                              Template="{StaticResource Menu_SubMenu_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_genre.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                        <!--// Genres Submenu - Pop //-->
+
+                        <MenuItem Header="Pop"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_pop.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                        <!--// Genres Submenu - Rock //-->
+
+                        <MenuItem Header="Rock"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_rock.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                        <!--// Genres Submenu - Metal //-->
+
+                        <MenuItem Header="Metal"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_metal.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                        <!--// Genres Submenu - Acoustic //-->
+
+                        <MenuItem Header="Acoustic"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_acoustic.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                        <!--// Genres Submenu - Hip Hop //-->
+
+                        <MenuItem Header="Hip Hop"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_hiphop.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                        <!--// Genres Submenu - Electronic //-->
+
+                        <MenuItem Header="Electronic"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_electronic.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                        <!--// Genres Submenu - Jazz //-->
+
+                        <MenuItem Header="Jazz"
+                                  Template="{StaticResource Item_Template}">
+
+                            <MenuItem.Icon>
+
+                                <Image Source="Assets/img_jazz.png"
+                                       Stretch="None" />
+
+                            </MenuItem.Icon>
+
+                        </MenuItem>
+
+                    </MenuItem>
+
+                    <!--// Music Submenu - Artists //-->
+
+                    <MenuItem Header="Artists"
+                              Template="{StaticResource Item_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_artist.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+                    <!--// Music Submenu - Playlists //-->
+
+                    <MenuItem Header="Playlists"
+                              Template="{StaticResource Item_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_playlist.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+                </MenuItem>
+
+                <!--// Main Menu - Movies //-->
+
+                <MenuItem Header="Movies"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_movies.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--// Main Menu - Search //-->
+
+                <MenuItem Header="Search"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_search.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--// Main Menu - Folders //-->
+
+                <MenuItem Header="Folders"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_folder.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--// Main Menu - History //-->
+
+                <MenuItem Header="History"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_history.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--// Main Menu - Settings //-->
+
+                <MenuItem Header="Settings"
+                          Template="{StaticResource Menu_SubMenu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_setting.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                    <!--// Settings Submenu - Input / Codecs //-->
+
+                    <MenuItem Header="Input / Codecs"
+                              Template="{StaticResource Item_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_input.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+                    <!--// Settings Submenu - Hotkeys //-->
+
+                    <MenuItem Header="Hotkeys"
+                              Template="{StaticResource Item_Template}">
+
+                        <MenuItem.Icon>
+
+                            <Image Source="Assets/img_hotkey.png"
+                                   Stretch="None" />
+
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+                </MenuItem>
+
+                <!--// Main Menu - About //-->
+
+                <MenuItem Header="About"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_about.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+                <!--// Main Menu - Exit //-->
+
+                <MenuItem Header="Exit"
+                          Template="{StaticResource Menu_Template}">
+
+                    <MenuItem.Icon>
+
+                        <Image Source="Assets/img_exit.png"
+                               Stretch="None" />
+
+                    </MenuItem.Icon>
+
+                </MenuItem>
+
+            </Menu>
+
+        </StackPanel>
+
+        <!--// Maximize / Minimize App //-->
+
+        <Button x:Name="MaxBtn"
+                Style="{StaticResource MaxBtnStyle}"
+                Click="MaxBtn_Click" />
+
+        <!--// Close App //-->
+
+        <Button x:Name="CloseBtn"
+                Style="{StaticResource CloseBtnStyle}"
+                Click="CloseBtn_Click" />
+
+    </Grid>
+
+</Window>
